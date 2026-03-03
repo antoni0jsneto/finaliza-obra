@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 96%;
+    --foreground: 210 60% 15%;
+    --primary: 210 60% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 145 60% 45%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 40%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 15%;
+    --border: 210 15% 90%;
+    --input: 0 0% 100%;
+    --ring: 145 60% 45%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 60% 15%;
+    --foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 60% 15%;
+    --secondary: 145 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 145 60% 45%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 210 50% 20%;
+    --muted-foreground: 210 10% 70%;
+    --card: 210 55% 18%;
+    --card-foreground: 0 0% 100%;
+    --popover: 210 55% 18%;
+    --popover-foreground: 0 0% 100%;
+    --border: 210 40% 25%;
+    --input: 210 55% 18%;
+    --ring: 145 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: clip;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary));
+}
